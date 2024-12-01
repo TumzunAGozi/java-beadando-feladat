@@ -10,5 +10,4 @@ public class SecurityRoleApplication {
 
 		SpringApplication.run(SecurityRoleApplication.class, args);
 	}
-
 }
