@@ -17,5 +17,7 @@ public class HomeController {
     public String admin() {
         return "admin";
     }
+    @GetMapping ("/guest/home")
+    public String guest(){return "guest";}
 }
 
