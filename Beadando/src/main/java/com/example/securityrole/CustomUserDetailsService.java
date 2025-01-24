@@ -16,6 +16,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     private UserRepository userRepo;		// Dependency injection
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        // a user-t most email cím alapján azonosítjuk:
         User user = userRepo.findByEmail(userName)
                 .orElseThrow(() -> new UsernameNotFoundException("Email " + userName + " not found"));
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
